@@ -23,6 +23,7 @@ public class MyApplicationFactory implements ApplicationFactory {
 
         Routes routes = Routes.define(r -> {
             r.get("/").to(IndexController.class, "index");
+            r.post("/print").to(IndexController.class, "print");
         }).compile();
 
         app.use(new DefaultCharsetMiddleware<>());
